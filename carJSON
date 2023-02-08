@@ -1,0 +1,22 @@
+{
+	"model": "Corolla",
+	"brand": "Toyota",
+	"seats": [{
+			"upholstering": "fabric",
+			"color": "black"
+		},
+		{
+			"upholstering": "fabric",
+			"color": "black"
+		},
+		{
+			"upholstering": "fabric",
+			"color": "black"
+		},
+		{
+			"upholstering": "fabric",
+			"color": "black"
+		}
+	],
+	"engine": 1200
+}
