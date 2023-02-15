@@ -4,6 +4,7 @@ import com.crud.tasks.controller.TaskNotFoundException;
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,5 +26,9 @@ public class DbService {
 
     public Task saveTask(final Task task) {
         return repository.save(task);
+    }
+
+    public void deleteTask(Long id) {
+        repository.deleteById(id);
     }
 }
