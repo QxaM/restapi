@@ -2,7 +2,6 @@ package com.crud.tasks.trello.client;
 
 import com.crud.tasks.domain.*;
 import com.crud.tasks.trello.config.TrelloConfig;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
