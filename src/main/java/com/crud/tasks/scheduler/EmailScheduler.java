@@ -17,15 +17,26 @@ public class EmailScheduler {
     private final TaskRepository taskRepository;
     private final AdminConfig adminConfig;
 
-    @Scheduled(fixedDelay = 10000)
+    @Scheduled(cron = "0 0 10 * * *")
     public void sendInformationEmail() {
         long size = taskRepository.count();
+        String message = buildMessage(size);
         simpleEmailService.send(
                 Mail.builder()
                         .mailTo(adminConfig.getAdminMail())
                         .subject(SUBJECT)
-                        .message("Currently in database you got: " + size + " tasks")
+                        .message(message)
                         .build()
         );
+    }
+
+    private String buildMessage(long size) {
+        String message = "Currently in database you got: " + size + " ";
+        if (size > 1) {
+            message += "tasks";
+        } else {
+            message += "task";
+        }
+        return message;
     }
 }
